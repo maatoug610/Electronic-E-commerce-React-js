@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from 'react-router-dom';
+import Ejmel from "./components/ejmelHome/Ejmel";
+import Laptop from "./components/ejmelFilter/laptopCollection";
+import Phone from "./components/ejmelFilter/smartPhoneCollection";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <Routes>
+        <Route path="/" element={<Ejmel />} />
+        <Route path="/laptop" element={<Laptop />} />
+        <Route path="/smartPhone" element={<Phone/>} />
+      </Routes>
+      
+      
     </div>
   );
 }
